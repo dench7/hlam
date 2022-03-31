@@ -1,3 +1,4 @@
+
 seeds:
       9b748e1bd1ef7f679c6ec75533e28630:
         addresses:
@@ -35,3 +36,43 @@ seeds:
          addresses:
            - "/ip4/144.126.146.218/tcp/6180/ln-noise-ik/113848fd5e61f37cb921860a1a705312349d150d27c73488ba2a26da0f1c711d/ln-handshake/0"
          role: "Upstream"
+      50a02619a7bc71cad772915e941dd21b:
+          addresses:
+          - "/ip4/38.242.195.198/tcp/6180/ln-noise-ik/2aedc26e7f0c006bec54cf2aaa52189750a02619a7bc71cad772915e941dd21b/ln-handshake/0"
+          role: "Upstream"
+      2354673117bdd62b8f0ec7996134530a:
+          addresses:
+          - "/ip4/5.189.178.82/tcp/6180/ln-noise-ik/dabd227230e23e530c183e7ac7df87fd2354673117bdd62b8f0ec7996134530a/ln-handshake/0"
+          role: "Upstream"
+      57e8c9dc4e8f7f5653c9bb9a57759f6e:
+          addresses:
+          - "/ip4/194.163.189.229/tcp/6180/ln-noise-ik/c10cd88e94101ef65af85b7dac76185457e8c9dc4e8f7f5653c9bb9a57759f6e/ln-handshake/0"
+          role: "Upstream"
+      0714e01101bfae008dc2bf842e60bf7e:
+          addresses:
+          - "/ip4/109.205.180.235/tcp/6180/ln-noise-ik/898e8463995413b16f55c1e9358153bd0714e01101bfae008dc2bf842e60bf7e/ln-handshake/0"
+          role: "Upstream"
+      a043c10b2eacf09469114ea6f6ba1849:
+          addresses:
+          - "/ip4/5.189.151.48/tcp/6180/ln-noise-ik/0aa984f9268ea7e5841a72c2a4304fa8a043c10b2eacf09469114ea6f6ba1849/ln-handshake/0"
+          role: "Upstream"
+      50a02619a7bc71cad772915e941dd21b:
+          addresses:
+          - "/ip4/38.242.195.198/tcp/6180/ln-noise-ik/2aedc26e7f0c006bec54cf2aaa52189750a02619a7bc71cad772915e941dd21b/ln-handshake/0"
+          role: "Upstream"
+      2354673117bdd62b8f0ec7996134530a:
+          addresses:
+          - "/ip4/5.189.178.82/tcp/6180/ln-noise-ik/dabd227230e23e530c183e7ac7df87fd2354673117bdd62b8f0ec7996134530a/ln-handshake/0"
+          role: "Upstream"
+      57e8c9dc4e8f7f5653c9bb9a57759f6e:
+          addresses:
+          - "/ip4/194.163.189.229/tcp/6180/ln-noise-ik/c10cd88e94101ef65af85b7dac76185457e8c9dc4e8f7f5653c9bb9a57759f6e/ln-handshake/0"
+          role: "Upstream"
+      0714e01101bfae008dc2bf842e60bf7e:
+          addresses:
+          - "/ip4/109.205.180.235/tcp/6180/ln-noise-ik/898e8463995413b16f55c1e9358153bd0714e01101bfae008dc2bf842e60bf7e/ln-handshake/0"
+          role: "Upstream"
+      a043c10b2eacf09469114ea6f6ba1849:
+          addresses:
+          - "/ip4/5.189.151.48/tcp/6180/ln-noise-ik/0aa984f9268ea7e5841a72c2a4304fa8a043c10b2eacf09469114ea6f6ba1849/ln-handshake/0"
+          role: "Upstream"
