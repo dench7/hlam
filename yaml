@@ -1,9 +1,0 @@
-seeds:
-    9b748e1bd1ef7f679c6ec75533e28630:
-        addresses:
-            - '/ip4/65.21.224.189/tcp/6180/ln-noise-ik/dfd2c753092ad421fc4a23c3b478419b9b748e1bd1ef7f679c6ec75533e28630/ln-handshake/0'
-        role: 'Upstream'
-    2b794121588cdb26c9f4a743826a7d15:
-        addresses:
-            - '/ip4/142.132.143.232/tcp/6180/ln-noise-ik/d2b9139b6b57b18438138267521014c12b794121588cdb26c9f4a743826a7d15/ln-handshake/0'
-        role: 'Upstream'
