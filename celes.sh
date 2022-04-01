@@ -53,6 +53,7 @@ make install
                echo "============================================================"
 
 TRUSTED_SERVER=$(curl -s "https://raw.githubusercontent.com/maxzonder/celestia/main/trusted_server.txt")
+
 TRUSTED_SERVER="http://$TRUSTED_SERVER"
 
                echo "============================================================"
@@ -60,8 +61,11 @@ TRUSTED_SERVER="http://$TRUSTED_SERVER"
                echo "============================================================"
                
 celestia bridge init --core.remote $TRUSTED_SERVER
+
 sed -i.bak -e 's/PeerExchange = false/PeerExchange = true/g' $HOME/.celestia-bridge/config.toml
+
 BootstrapPeers="[\"/dns4/andromeda.celestia-devops.dev/tcp/2121/p2p/12D3KooWKvPXtV1yaQ6e3BRNUHa5Phh8daBwBi3KkGaSSkUPys6D\", \"/dns4/libra.celestia-devops.dev/tcp/2121/p2p/12D3KooWK5aDotDcLsabBmWDazehQLMsDkRyARm1k7f1zGAXqbt4\", \"/dns4/norma.celestia-devops.dev/tcp/2121/p2p/12D3KooWHYczJDVNfYVkLcNHPTDKCeiVvRhg8Q9JU3bE3m9eEVyY\"]"
+
 sed -i -e "s|BootstrapPeers *=.*|BootstrapPeers = $BootstrapPeers|" $HOME/.celestia-bridge/config.toml
 
                echo "============================================================"
