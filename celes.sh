@@ -57,7 +57,7 @@ TRUSTED_SERVER="http://$TRUSTED_SERVER"
 
                echo "============================================================"
                echo "Init and config bridge"
-               echo "===========================================================
+               echo "============================================================"
                
 celestia bridge init --core.remote $TRUSTED_SERVER
 sed -i.bak -e 's/PeerExchange = false/PeerExchange = true/g' $HOME/.celestia-bridge/config.toml
