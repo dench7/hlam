@@ -16,8 +16,6 @@ echo "                                                             ";
 echo -e "\e[0m"
 echo "=================================================="
 
-"Prepare the server for installation"
-
                echo "============================================================"
                echo "Preparation has begun"
                echo "============================================================"
@@ -38,11 +36,10 @@ source $HOME/.bash_profile
                echo "The server is ready!"
                echo "============================================================"
             
- "Install Celestia Bridge"
             
-                echo "============================================================"
-                echo "Installation started"
-                echo "============================================================"
+               echo "============================================================"
+               echo "Installation started"
+               echo "============================================================"
 
 cd $HOME
 rm -rf celestia-node
@@ -93,7 +90,6 @@ sudo systemctl restart celestia-bridge
                echo "Installation complete!"
                echo "============================================================"
 
-"Check node status")
                echo "============================================================"
                echo "Check node status"
                echo "============================================================"
