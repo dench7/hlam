@@ -27,6 +27,7 @@ sleep 2
 PS3='Select an action: '
 options=(
 "Запустить Aptos"
+"Поменять seed"
 "Статус синхронизации"
 "Логи"
 "Посмотреть данные"
@@ -43,6 +44,12 @@ echo "Installing"
 echo "============================================================"
 wget -q -O install.sh https://raw.githubusercontent.com/dench7/hlam/main/install.sh && chmod +x install.sh && sudo /bin/bash install.sh
 
+break
+;;
+
+"Поменять seed")
+
+wget -q -O seeds.sh https://raw.githubusercontent.com/dench7/hlam/main/seeds.sh && chmod +x seeds.sh && sudo /bin/bash seeds.sh
 break
 ;;
 
