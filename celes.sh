@@ -84,14 +84,11 @@ EOF
 
 sudo systemctl enable celestia-bridge
 sudo systemctl daemon-reload
+
 sudo systemctl restart celestia-bridge
 
                echo "============================================================"
                echo "Installation complete!"
                echo "============================================================"
-
-               echo "============================================================"
-               echo "Check node status"
-               echo "============================================================"
-
+               
 journalctl -u celestia-bridge -o cat -f
