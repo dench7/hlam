@@ -17,7 +17,7 @@ echo -e "\e[0m"
 echo "=================================================="
 
 
-"Prepare the server for installation")
+"Prepare the server for installation"
                echo "============================================================"
                echo "Preparation has begun"
                echo "============================================================"
