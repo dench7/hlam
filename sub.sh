@@ -19,38 +19,17 @@ echo "                                                               ";
 echo -e "\e[0m"
 echo "==============================================================="
 
-
-sleep 2
-
-PS3='Select an action: '
-options=(
-"Установить"
-"Логи1"
-"Логи2"
-"Подписанные блоки"
-"Перезапуск фермера и ноды"
-"Exit")
-select opt in "${options[@]}"
-do
-case $opt in
-
-
-"Установить")
-
-echo "============================================================"
-echo "Installing"
-echo "============================================================"
-
 sudo apt-get update && sudo apt-get upgrade -y
+
 sudo apt-get install wget -y
 
-mkdir $HOME/subspace
-cd $HOME/subspace
-wget https://github.com/subspace/subspace/releases/download/snapshot-2022-mar-09/subspace-farmer-ubuntu-x86_64-snapshot-2022-mar-09 -O farmer
-wget https://github.com/subspace/subspace/releases/download/snapshot-2022-mar-09/subspace-node-ubuntu-x86_64-snapshot-2022-mar-09 -O subspace
-sudo chmod +x 
-sudo mv /usr/local/bin/ 
-cd $HOME 
+mkdir $HOME/subspace; \
+cd $HOME/subspace && \
+wget https://github.com/subspace/subspace/releases/download/snapshot-2022-mar-09/subspace-farmer-ubuntu-x86_64-snapshot-2022-mar-09 -O farmer && \
+wget https://github.com/subspace/subspace/releases/download/snapshot-2022-mar-09/subspace-node-ubuntu-x86_64-snapshot-2022-mar-09 -O subspace && \
+sudo chmod +x * && \
+sudo mv * /usr/local/bin/ && \
+cd $HOME && \
 rm -Rvf $HOME/subspace
 
 echo "============================================================"
@@ -80,7 +59,7 @@ source $HOME/.bash_profile
                 echo "Create Servis"
                 echo "============================================================"
 
-sudo tee /etc/systemd/system/subspaced.service > /dev/null  <<EOF 
+sudo tee /etc/systemd/system/subspaced.service > /dev/null <<EOF 
 [Unit]
 Description=Subspace Node
 After=network.target
@@ -105,13 +84,11 @@ LimitNOFILE=10000
 WantedBy=multi-user.target
 EOF
 
-
 sudo systemctl daemon-reload 
 sudo systemctl enable subspaced 
 sudo systemctl restart subspaced
 
 sleep 5
-
                 echo "============================================================"
                 echo "Create Farmer"
                 echo "============================================================"
@@ -134,34 +111,3 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable farmerd
 sudo systemctl restart farmerd
-
-break
-;;
-
-"Логи1")
-sudo journalctl -u subspaced -f -o cat
-break
-;;
-
-"Логи2")
-sudo journalctl -u farmerd -f -o cat
-break
-;;
-
-"Подписанные блоки")
-sudo journalctl -u farmerd -f -o cat
-break
-;;
-
-"Перезапуск фермера и ноды")
-sudo systemctl restart farmerd subspaced
-break
-;;
-
-"Exit")
-exit
-;;
-
-esac
-done
-done
