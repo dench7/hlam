@@ -1,8 +1,5 @@
 #!/bin/bash
 
-while true
-do
-
 echo "=============================================================="
 echo -e "\033[0;35m"
 echo "                                                               ";
@@ -23,13 +20,13 @@ sudo apt-get update && sudo apt-get upgrade -y
 
 sudo apt-get install wget -y
 
-mkdir $HOME/subspace \
-cd $HOME/subspace && \
-wget https://github.com/subspace/subspace/releases/download/snapshot-2022-mar-09/subspace-farmer-ubuntu-x86_64-snapshot-2022-mar-09 -O farmer && \
-wget https://github.com/subspace/subspace/releases/download/snapshot-2022-mar-09/subspace-node-ubuntu-x86_64-snapshot-2022-mar-09 -O subspace && \
-sudo chmod +x * && \
-sudo mv * /usr/local/bin/ && \
-cd $HOME && \
+mkdir $HOME/subspace
+cd $HOME/subspace
+wget https://github.com/subspace/subspace/releases/download/snapshot-2022-mar-09/subspace-farmer-ubuntu-x86_64-snapshot-2022-mar-09 -O farmer
+wget https://github.com/subspace/subspace/releases/download/snapshot-2022-mar-09/subspace-node-ubuntu-x86_64-snapshot-2022-mar-09 -O subspace
+sudo chmod +x *
+sudo mv * /usr/local/bin/
+cd $HOME
 rm -Rvf $HOME/subspace
 
 read -p "Enter node name"
@@ -85,6 +82,6 @@ LimitNOFILE=10000
 WantedBy=multi-user.target
 EOF
 
-sudo systemctl daemon-reload && \
-sudo systemctl enable farmerd && \
+sudo systemctl daemon-reload
+sudo systemctl enable farmerd
 sudo systemctl restart farmerd
