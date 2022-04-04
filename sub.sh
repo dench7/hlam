@@ -30,10 +30,10 @@ cd $HOME
 rm -Rvf $HOME/subspace
 
 read -p "Enter node name:"
-echo 'export NODENAME='\"${NODENAME}\" >> $HOME/.bash_profile
+echo 'export NODENAME='${NODENAME} >> $HOME/.bash_profile
                
 read -p "SUBSPACE_ADDRESS:"
-echo 'export SUBSPACE_ADDRESS='\"${SUBSPACE_ADDRESS}\" >> $HOME/.bash_profile
+echo 'export SUBSPACE_ADDRESS='${SUBSPACE_ADDRESS} >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 sudo tee /etc/systemd/system/subspaced.service > /dev/null  <<EOF 
