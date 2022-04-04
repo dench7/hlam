@@ -23,7 +23,7 @@ sudo apt-get update && sudo apt-get upgrade -y
 
 sudo apt-get install wget -y
 
-mkdir $HOME/subspace; \
+mkdir $HOME/subspace \
 cd $HOME/subspace && \
 wget https://github.com/subspace/subspace/releases/download/snapshot-2022-mar-09/subspace-farmer-ubuntu-x86_64-snapshot-2022-mar-09 -O farmer && \
 wget https://github.com/subspace/subspace/releases/download/snapshot-2022-mar-09/subspace-node-ubuntu-x86_64-snapshot-2022-mar-09 -O subspace && \
