@@ -44,13 +44,13 @@ echo "============================================================"
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install wget -y
 
-mkdir $HOME/subspace; \
-cd $HOME/subspace && \
-wget https://github.com/subspace/subspace/releases/download/snapshot-2022-mar-09/subspace-farmer-ubuntu-x86_64-snapshot-2022-mar-09 -O farmer && \
-wget https://github.com/subspace/subspace/releases/download/snapshot-2022-mar-09/subspace-node-ubuntu-x86_64-snapshot-2022-mar-09 -O subspace && \
-sudo chmod +x * && \
-sudo mv * /usr/local/bin/ && \
-cd $HOME && \
+mkdir $HOME/subspace
+cd $HOME/subspace
+wget https://github.com/subspace/subspace/releases/download/snapshot-2022-mar-09/subspace-farmer-ubuntu-x86_64-snapshot-2022-mar-09 -O farmer
+wget https://github.com/subspace/subspace/releases/download/snapshot-2022-mar-09/subspace-node-ubuntu-x86_64-snapshot-2022-mar-09 -O subspace
+sudo chmod +x 
+sudo mv /usr/local/bin/ 
+cd $HOME 
 rm -Rvf $HOME/subspace
 
 echo "============================================================"
@@ -106,8 +106,8 @@ WantedBy=multi-user.target
 EOF
 
 
-sudo systemctl daemon-reload && \
-sudo systemctl enable subspaced && \
+sudo systemctl daemon-reload 
+sudo systemctl enable subspaced 
 sudo systemctl restart subspaced
 
 sleep 5
@@ -131,8 +131,8 @@ LimitNOFILE=10000
 WantedBy=multi-user.target
 EOF
 
-sudo systemctl daemon-reload && \
-sudo systemctl enable farmerd && \
+sudo systemctl daemon-reload
+sudo systemctl enable farmerd
 sudo systemctl restart farmerd
 
 break
