@@ -45,14 +45,14 @@ NAME_NODE="[NODERS]"
                 
 read NICKNAME
 NICKNAME=$NICKNAME$NAME_NODE
-echo "export NICKNAME='${NICKNAME} >> $HOME/.bash_profile
+echo "export NICKNAME="${NICKNAME} >> $HOME/.bash_profile
 
                 echo "============================================================"
                 echo "Enter SUBSPACE_ADDRESS"
                 echo "============================================================"
                
 read SUBSPACE_ADDRESS
-echo 'export SUBSPACE_ADDRESS='${SUBSPACE_ADDRESS=} >> $HOME/.bash_profile
+echo "export SUBSPACE_ADDRESS="${SUBSPACE_ADDRESS=} >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
                 echo "============================================================"
