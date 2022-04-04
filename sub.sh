@@ -32,27 +32,14 @@ sudo mv * /usr/local/bin/ && \
 cd $HOME && \
 rm -Rvf $HOME/subspace
 
-                echo "============================================================"
-                echo "Enter NodName:"
-                echo "============================================================"
-
 read -p "Enter node name: "
 echo 'export NODENAME='\"${NODENAME}\" >> $HOME/.bash_profile
-               
-
-                echo "============================================================"
-                echo "Enter SUBSPACE_ADDRESS"
-                echo "============================================================"
                
 read -p "SUBSPACE_ADDRESS"
 echo 'export SUBSPACE_ADDRESS='\"${SUBSPACE_ADDRESS}\" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
-                echo "============================================================"
-                echo "Create Servis"
-                echo "============================================================"
-
-sudo tee <<EOF >/dev/null /etc/systemd/system/subspaced.service
+sudo tee /etc/systemd/system/subspaced.service > /dev/null  <<EOF 
 [Unit]
 Description=Subspace Node
 After=network.target
@@ -82,11 +69,8 @@ sudo systemctl enable subspaced && \
 sudo systemctl restart subspaced
 
 sleep 5
-                echo "============================================================"
-                echo "Create Farmer"
-                echo "============================================================"
 
-sudo tee <<EOF >/dev/null /etc/systemd/system/farmerd.service
+sudo tee /etc/systemd/system/farmerd.service > /dev/null <<EOF 
 [Unit]
 Description=Subspace Farmer
 After=network.target
