@@ -27,7 +27,7 @@ options=(
 "Установить"
 "Логи1"
 "Логи2"
-"Подписонные блоки"
+"Подписанные блоки"
 "Перезапуск фермера и ноды"
 "Exit")
 select opt in "${options[@]}"
@@ -149,7 +149,7 @@ sudo journalctl -u farmerd -f -o cat
 break
 ;;
 
-"Подписонные блоки")
+"Подписанные блоки")
 sudo journalctl -u farmerd -f -o cat
 break
 ;;
@@ -162,7 +162,7 @@ break
 "Exit")
 exit
 ;;
-*) echo "invalid option $REPLY";;
+
 esac
 done
 done
