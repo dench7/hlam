@@ -32,27 +32,20 @@ sudo mv * /usr/local/bin/ && \
 cd $HOME && \
 rm -Rvf $HOME/subspace
 
-echo "============================================================"
-echo "Create Wallet"
-echo "============================================================"
-
-NAME_NODE="[NODERS]"
-                echo "============================================================"
-                echo "Set parameters"
                 echo "============================================================"
                 echo "Enter NodName:"
                 echo "============================================================"
-                
-read NICKNAME
-NICKNAME=$NICKNAME$NAME_NODE
-echo "export NICKNAME="${NICKNAME} >> $HOME/.bash_profile
+
+read -p "Enter node name: "
+echo 'export NODENAME='\"${NODENAME}\" >> $HOME/.bash_profile
+               
 
                 echo "============================================================"
                 echo "Enter SUBSPACE_ADDRESS"
                 echo "============================================================"
                
-read SUBSPACE_ADDRESS
-echo "export SUBSPACE_ADDRESS="${SUBSPACE_ADDRESS=} >> $HOME/.bash_profile
+read -p "SUBSPACE_ADDRESS"
+echo 'export SUBSPACE_ADDRESS='\"${SUBSPACE_ADDRESS}\" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
                 echo "============================================================"
