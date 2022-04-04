@@ -32,7 +32,7 @@ sudo mv * /usr/local/bin/ && \
 cd $HOME && \
 rm -Rvf $HOME/subspace
 
-read -p "Enter node name: "
+read -p "Enter node name"
 echo 'export NODENAME='\"${NODENAME}\" >> $HOME/.bash_profile
                
 read -p "SUBSPACE_ADDRESS"
