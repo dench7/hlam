@@ -3,7 +3,6 @@
 while true
 do
 
-# Logo
 echo "=================================================="
 echo -e "\033[0;35m"
 echo "                                                               ";
@@ -22,7 +21,6 @@ echo "=================================================="
 
 
 sleep 2
-# Menu
 
 PS3='Select an action: '
 options=(
@@ -36,7 +34,6 @@ select opt in "${options[@]}"
 do
 case $opt in
 
-# install
 
 "Установить")
 echo "============================================================"
@@ -83,7 +80,7 @@ source $HOME/.bash_profile
                 echo "Create Servis"
                 echo "============================================================"
 
-sudo tee <<EOF >/dev/null /etc/systemd/system/subspaced.service
+sudo tee /etc/systemd/system/subspaced.service > /dev/null  <<EOF 
 [Unit]
 Description=Subspace Node
 After=network.target
@@ -120,7 +117,7 @@ sleep 5
                 echo "Create Farmer"
                 echo "============================================================"
 
-sudo tee <<EOF >/dev/null /etc/systemd/system/farmerd.service
+sudo tee /etc/systemd/system/farmerd.service > /dev/null  <<EOF 
 [Unit]
 Description=Subspace Farmer
 After=network.target
