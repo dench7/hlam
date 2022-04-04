@@ -29,10 +29,10 @@ sudo mv * /usr/local/bin/
 cd $HOME
 rm -Rvf $HOME/subspace
 
-read -p "Enter node name"
+read -p "Enter node name:"
 echo 'export NODENAME='\"${NODENAME}\" >> $HOME/.bash_profile
                
-read -p "SUBSPACE_ADDRESS"
+read -p "SUBSPACE_ADDRESS:"
 echo 'export SUBSPACE_ADDRESS='\"${SUBSPACE_ADDRESS}\" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
