@@ -72,31 +72,34 @@ echo "============================================================"
 echo "create service"
 echo "============================================================"
 
-sudo tee <<EOF >/dev/null /etc/systemd/system/subspaced.service
-[Unit]
+echo -e '\n\e[45mRunning\e[0m\n' && sleep 1
+echo -e '\n\e[45mCreating a service\e[0m\n' && sleep 1
+echo "[Unit]
 Description=Subspace Node
 After=network.target
-
 [Service]
 Type=simple
 User=$USER
-ExecStart=$(which subspace) \
-        --chain testnet \
-        --wasm-execution compiled \
-        --execution wasm \
-        --bootnodes "/dns/farm-rpc.subspace.network/tcp/30333/p2p/12D3KooWPjMZuSYj35ehced2MTJFf95upwpHKgKUrFRfHwohzJXr" \
-        --rpc-cors all \
-        --rpc-methods unsafe \
-        --ws-external \
-        --validator \
-        --telemetry-url "wss://telemetry.polkadot.io/submit/ 1" \
-        --name $NICKNAME
+ExecStart=$(which subspace) \\
+--chain testnet \\
+--wasm-execution compiled \\
+--execution wasm \\
+--bootnodes "/dns/farm-rpc.subspace.network/tcp/30333/p2p/12D3KooWPjMZuSYj35ehced2MTJFf95upwpHKgKUrFRfHwohzJXr" \\
+--rpc-cors all \\
+--rpc-methods unsafe \\
+--ws-external \\
+--validator \\
+--telemetry-url "wss://telemetry.polkadot.io/submit/ 1" \\
+--name $NICKNAME
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=10000
-
 [Install]
 WantedBy=multi-user.target
+" > $HOME/subspaced.service
+sudo mv $HOME/subspaced.service /etc/systemd/system
+sudo tee <<EOF >/dev/null /etc/systemd/
+Storage=persistent
 EOF
 
 sudo systemctl daemon-reload
@@ -109,26 +112,25 @@ echo "============================================================"
 echo "create farmerd service"
 echo "============================================================"
 
-sudo tee <<EOF >/dev/null /etc/systemd/system/farmerd.service
-[Unit]
+echo -e '\n\e[45mRunning\e[0m\n' && sleep 1
+echo -e '\n\e[45mCreating a service\e[0m\n' && sleep 1
+echo "[Unit]
 Description=Subspace Farmer
 After=network.target
-
-[Service]
+Service]
 Type=simple
 User=$USER
 ExecStart=$(which farmer) farm --reward-address=$SUBSPACE_ADDRESS
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=10000
-
 [Install]
 WantedBy=multi-user.target
+" > $HOME/farmerd.service
+sudo mv $HOME/farmerd.service /etc/systemd/system
+sudo tee <<EOF >/dev/null /etc/systemd/
+Storage=persistent
 EOF
-
-sudo systemctl daemon-reload
-sudo systemctl enable farmerd
-sudo systemctl restart farmerd
 
 break
 ;;
