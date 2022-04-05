@@ -54,10 +54,10 @@ sudo mv * /usr/local/bin/
 cd $HOME
 rm -Rvf $HOME/subspace
 
-read -p "Enter node name:"
+read -p "Enter node name: "
 echo "export NICKNAME="${NICKNAME}"" >> ~/.bash_profile
                
-read -p "SUBSPACE_ADDRESS:"
+read -p "SUBSPACE_ADDRESS: "
 echo "export SUBSPACE_ADDRESS="${SUBSPACE_ADDRESS}"" >> ~/.bash_profile
 source ~/.bash_profile
 
