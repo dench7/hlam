@@ -37,23 +37,23 @@ echo "export SUBSPACE_ADDRESS="${SUBSPACE_ADDRESS}"" >> ~/.bash_profile
 source ~/.bash_profile
 
 
-sudo tee /etc/systemd/system/subspaced.service > /dev/null  <<EOF 
+sudo tee <<EOF >/dev/null /etc/systemd/system/subspaced.service
 [Unit]
 Description=Subspace Node
 After=network.target
 [Service]
 Type=simple
 User=$USER
-ExecStart=$(which subspace)
---chain testnet
---wasm-execution compiled
---execution wasm
---bootnodes "/dns/farm-rpc.subspace.network/tcp/30333/p2p/12D3KooWPjMZuSYj35ehced2MTJFf95upwpHKgKUrFRfHwohzJXr"
---rpc-cors all
---rpc-methods unsafe
---ws-external
---validator
---telemetry-url "wss://telemetry.polkadot.io/submit/ 1"
+ExecStart=$(which subspace) \\
+--chain testnet \\
+--wasm-execution compiled \\
+--execution wasm \\
+--bootnodes "/dns/farm-rpc.subspace.network/tcp/30333/p2p/12D3KooWPjMZuSYj35ehced2MTJFf95upwpHKgKUrFRfHwohzJXr" \\
+--rpc-cors all \\
+--rpc-methods unsafe \\
+--ws-external \\
+--validator \\
+--telemetry-url "wss://telemetry.polkadot.io/submit/ 1" \\
 --name $NICKNAME
 Restart=on-failure
 RestartSec=10
@@ -68,7 +68,7 @@ sudo systemctl restart subspaced
 
 sleep 5
 
-sudo tee /etc/systemd/system/farmerd.service > /dev/null <<EOF 
+sudo tee <<EOF >/dev/null /etc/systemd/system/farmerd.service
 [Unit]
 Description=Subspace Farmer
 After=network.target
