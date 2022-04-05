@@ -1,5 +1,8 @@
 #!/bin/bash
 
+while true
+do
+
 echo "=============================================================="
 echo -e "\033[0;35m"
 echo "                                                               ";
@@ -16,9 +19,31 @@ echo "                                                               ";
 echo -e "\e[0m"
 echo "==============================================================="
 
-sudo apt-get update && sudo apt-get upgrade -y
 
+sleep 2
+
+PS3='Select an action: '
+options=(
+"Установить"
+"Логи1"
+"Логи2"
+"Подписанные блоки"
+"Перезапуск фермера и ноды"
+"Exit")
+select opt in "${options[@]}"
+do
+case $opt in
+
+
+"Установить")
+
+echo "============================================================"
+echo "Installing"
+echo "============================================================"
+
+sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install wget -y
+sudo apt install htop
 
 mkdir $HOME/subspace
 cd $HOME/subspace
@@ -86,3 +111,28 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable farmerd
 sudo systemctl restart farmerd
+
+break
+;;
+"Логи1")
+sudo journalctl -u subspaced -f -o cat
+break
+;;
+"Логи2")
+sudo journalctl -u farmerd -f -o cat
+break
+;;
+"Подписанные блоки")
+sudo journalctl -u farmerd -f -o cat
+break
+;;
+"Перезапуск фермера и ноды")
+sudo systemctl restart farmerd subspaced
+break
+;;
+"Exit")
+exit
+;;
+esac
+done
+done
