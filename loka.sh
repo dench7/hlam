@@ -17,35 +17,36 @@ echo "                                                               ";
 echo -e "\e[0m"
 echo "================================================================"
 
-echo "xxxxxxxxxxxxxxxxx"
-echo "=====Updates====="
-echo "xxxxxxxxxxxxxxxxx"
+echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+echo "=============Updates============="
+echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 sleep 3
 
 sudo apt-get update
 sudo apt-get install jq -y
+sudo yum install tmux
 
 sleep 3
-echo "xxxxxxxxxxxxxxxxxxxxxxxxxx"
-echo "======Install Python======"
-echo "xxxxxxxxxxxxxxxxxxxxxxxxxx"
+echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+echo "=============Install Python==========="
+echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 sleep 5
 sudo apt install python3-pip -y
 sudo apt install pipenv -y
 
 sleep 3
-echo "xxxxxxxxxxxxxxxxxxxxxxxxxx"
-echo "======Install Docker======"
-echo "xxxxxxxxxxxxxxxxxxxxxxxxxx"
+echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+echo "============Install Docker============="
+echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 sleep 5
 
 . <(wget -qO- https://raw.githubusercontent.com/SecorD0/utils/main/installers/docker.sh)
 
 
-echo "xxxxxxxxxxxxxxxxxxxxx"
-echo "=====Install Bot====="
-echo "xxxxxxxxxxxxxxxxxxxxx"
+echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+echo "=============Install Bot==============="
+echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 sleep 5
 
@@ -53,5 +54,5 @@ git clone https://github.com/hldh214/lok_bot.git
 cd lok_bot
 docker buildx build -t lok_bot_local --build-arg PYPI_MIRROR=https://pypi.tuna.tsinghua.edu.cn/simple .
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-echo "Бот готов ,укажи айди профиля в команде docker run -e TOKEN=YOUR_X_ACCESS_TOKEN lok_bot_local"
+echo "=======================================Install Successful===================================="
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
