@@ -84,8 +84,8 @@ break
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 echo "=====================Вставить Айди========================"
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-read TOKEN
-echo 'export TOKEN='${$YOUR_X_ACCESS_TOKEN}
+read YOUR_X_ACCESS_TOKEN
+echo 'export YOUR_X_ACCESS_TOKEN='${$YOUR_X_ACCESS_TOKEN}
 
 docker run -e TOKEN=$YOUR_X_ACCESS_TOKEN lok_bot_local
 
