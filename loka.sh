@@ -1,5 +1,8 @@
 #!/bin/bash
 
+while true
+do
+
 # Logo
 echo "==============================================================="
 echo -e "\033[0;35m"
@@ -17,6 +20,22 @@ echo "                                                               ";
 echo -e "\e[0m"
 echo "================================================================"
 
+
+sleep 2
+# Menu
+
+PS3='Select an action: '
+options=(
+"Установить бота"
+"Запустить бота"
+"Exit")
+select opt in "${options[@]}"
+do
+case $opt in
+
+
+
+"Установить бота")
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 echo "=============Updates============="
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
@@ -56,3 +75,28 @@ docker buildx build -t lok_bot_local --build-arg PYPI_MIRROR=https://pypi.tuna.t
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 echo "=======================================Install Successful===================================="
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+break
+;;
+
+"Запустить Бота")
+
+echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+echo "=====================Вставить Айди========================"
+echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+read TOKEN
+echo 'export TOKEN='${$YOUR_X_ACCESS_TOKEN}
+
+docker run -e TOKEN=$YOUR_X_ACCESS_TOKEN lok_bot_local
+
+break
+;;
+
+
+"Exit")
+exit
+;;
+*) echo "invalid option $REPLY";;
+esac
+done
+done
