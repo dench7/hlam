@@ -158,7 +158,6 @@ exit
 *) echo "invalid option $REPLY";;
 esac
 done
-done
 
 break
 ;;
@@ -276,7 +275,6 @@ exit
 ;;
 *) echo "invalid option $REPLY";;
 esac
-done
 done
 
 break
