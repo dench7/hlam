@@ -29,15 +29,5 @@ for (( ;; )); do
                 printf "* sleep for ${RED_COLOR}%02d${WITHOU_COLOR} sec\r" $timer
                 sleep 1
         done
-        BAL=$(uptickd query bank balances ${DELEGATOR_ADDRESS} --node ${NODE} -o json | jq -r '.balances | .[].amount');
-        BAL=$(($BAL -100000))
-        echo -e "BALANCE: ${GREEN_COLOR}${BAL}${WITHOU_COLOR} auptick\n"
-        echo -e "Stake ALL 11111\n"
-        echo -e "${PWD}\n${PWD}\n" | uptickd tx staking delegate ${VALIDATOR_ADDRESS} ${BAL}auptick --chain-id ${CHAINID} --from ${ACC_NAME} --node ${NODE} -y --fees 1555auptick
-        for (( timer=${DELAY}; timer>0; timer-- ))
-        do
-                printf "* sleep for ${RED_COLOR}%02d${WITHOU_COLOR} sec\r" $timer
-                sleep 1
-        done       
-
+    
 done
