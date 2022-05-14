@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 sudo apt install cargo
 sudo apt install ca-certificates curl gnupg lsb-release wget jq sed -y
 
