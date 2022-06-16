@@ -25,10 +25,10 @@ sleep 3
 cd testnet
 docker compose down
 
-rm -rf ~/docker-compose.yaml
-rm -rf ~/public_full_node.yaml
-rm -rf ~/genesis.blob
-rm -rf ~/waypoint.txt
+rm -rf ~/testnet/docker-compose.yaml
+rm -rf ~/testnet/public_full_node.yaml
+rm -rf ~/testnet/genesis.blob
+rm -rf ~/testnet/waypoint.txt
 
 sleep 3
 
