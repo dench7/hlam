@@ -34,6 +34,7 @@ sleep 3
 
 wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose/public_full_node/docker-compose.yaml
 wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose/public_full_node/public_full_node.yaml
+docker pull docker.io/aptoslabs/validator:devnet
 wget https://devnet.aptoslabs.com/genesis.blob
 wget https://devnet.aptoslabs.com/waypoint.txt
 
