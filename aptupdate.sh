@@ -29,15 +29,17 @@ rm -rf ~/testnet/docker-compose.yaml
 rm -rf ~/testnet/public_full_node.yaml
 rm -rf ~/testnet/genesis.blob
 rm -rf ~/testnet/waypoint.txt
+docker volume rm /opt/aptos/data_db -f
+docker volume rm /testnet/data_db -f
 
 sleep 3
-
-wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose/public_full_node/docker-compose.yaml
-wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose/public_full_node/public_full_node.yaml
-docker pull docker.io/aptoslabs/validator:devnet
 wget https://devnet.aptoslabs.com/genesis.blob
 wget https://devnet.aptoslabs.com/waypoint.txt
+wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose/public_full_node/docker-compose.yaml
+wget https://raw.githubusercontent.com/aptos-labs/aptos-core/main/docker/compose/public_full_node/public_full_node.yaml
+docker pull docker.io/aptoslabs/validator:devnet_49f08c7419b442461e47164848305fe74e846607
 
 sleep 2
 
+docker run -it aptoslabs/tools:devnet /bin/bash
 docker-compose up
