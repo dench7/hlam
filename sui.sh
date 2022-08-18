@@ -1,6 +1,6 @@
 #!/bin/bash
 
-systemctl stop suid 
+systemctl stop suid
 
 rm -rf /var/sui/db/* /var/sui/genesis.blob $HOME/sui
 
@@ -18,7 +18,7 @@ git fetch upstream
 
 git checkout -B devnet --track upstream/devnet
 
-cargo build --release
+cargo build -p sui-node -p sui --release
 
 mv ~/sui/target/release/sui-node /usr/local/bin/
 
