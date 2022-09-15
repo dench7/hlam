@@ -4,7 +4,7 @@ cd ~/pathfinder
 
 git fetch
 
-git checkout v0.3.3
+git checkout v0.3.4
 
 cargo build --release --bin pathfinder
 
