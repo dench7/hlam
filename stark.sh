@@ -2,9 +2,11 @@
 
 cd ~/pathfinder
 
+rustup update
+
 git fetch
 
-git checkout v0.3.5
+git checkout v0.3.7
 
 cargo build --release --bin pathfinder
 
@@ -15,5 +17,7 @@ cd py
 source .venv/bin/activate
 
 PIP_REQUIRE_VIRTUALENV=true pip install -r requirements-dev.txt
+
+pip install --upgrade pip
 
 systemctl restart starknetd
