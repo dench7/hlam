@@ -16,7 +16,7 @@ cd py
 
 source .venv/bin/activate
 
-PIP_REQUIRE_VIRTUALENV=true pip install -r requirements-dev.txt
+PIP_REQUIRE_VIRTUALENV=true pip install -e .[dev]
 
 pip install --upgrade pip
 
