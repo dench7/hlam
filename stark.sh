@@ -6,7 +6,7 @@ rustup update
 
 git fetch
 
-git checkout v0.4.0
+git checkout v0.4.1
 
 cargo build --release --bin pathfinder
 
